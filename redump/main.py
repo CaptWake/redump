@@ -36,8 +36,8 @@ def build_parser() -> argparse.ArgumentParser:
         "-b",
         "--backend",
         required=True,
-        metavar="BACKEND",
-        help=f"backend; one of: {', '.join(available_backends())}",
+        choices=available_backends(),
+        help="backend to use",
     )
     parser.add_argument(
         "-m",
